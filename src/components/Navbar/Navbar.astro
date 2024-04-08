@@ -1,13 +1,11 @@
 ---
 ---
-
-
 <nav>
-    <div>
-          <a href="/" aria-current="page">EDEN</a>
+    <div class="brand-content">
+          <a class="brand" href="/" aria-current="page">EDEN</a>
     </div>
     <div class="menu-hamb">
-          <img src="/menu-hamb.svg" alt="menu" />
+          <img class="menu-hamb" src="/menu-hamb.svg" alt="menu" />
     </div>
 </nav>
 
@@ -29,11 +27,11 @@
 		z-index: 10;
 	}
 
-	nav div a {
+	.brand {
 		display: inline-block;
 		min-width: 9rem;
 		padding: 0.5rem;
-		font-size: 20px;
+		font-size: 2rem;
 		font-weight: bolder;
 		/* border-radius: 0.2rem;
 		border: solid 1px #aaa; */
@@ -42,8 +40,14 @@
 		color: #555;
 	}
 
-	nav div a[aria-current='page'] {
+	.brand[aria-current='page'] {
 		color: #333;
+		
 		/* background-color: #d4d4d4; */
 	}
+
+	.menu-hamb {
+		cursor: pointer;
+	}
 </style>
+	
