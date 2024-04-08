@@ -2,10 +2,90 @@
 
 ---
 
-<footer >
-	<strong>
-		Footer
-	</strong>
-	
+<footer class="sectionFooter">
+	<header class="content-title">
+		<h6 class="footer-tile">
+			<strong>
+				footer
+			</strong>
+		</h6>
+	</header>
+	<div class="div"></div>
 </footer>
 
+<style>
+	.sectionFooter {
+		width: 100%;
+		height: 100vh;
+
+		padding: 100px 25px 20px 25px;
+
+		background-color: #f7f7f7;
+
+		position: relative;
+		/* display: flex;
+			flex-wrap: wrap;
+			flex-direction: row; */
+
+		/* justify-content: center;
+			align-items: center; */
+	}
+
+	.content-title {
+		width: 100%;
+		height: 50px;
+		/* padding-bottom: 20px; */
+
+		/* display: flex;
+			justify-content: center;
+			align-items: center; */
+	}
+
+	.footer-tile {
+		width: 100%;
+		height: 100%;
+		text-align: left;
+
+		
+
+		color: #333;
+
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		line-height: 1px;
+	}
+
+	.footer-tile::after {
+		content: "";
+		width: 240px;
+		height: 3px;
+		margin: 9px 3px;
+		display: inline-block;
+		background-color: #78866b;
+	}
+
+	.div {
+		width: 100%;
+		height: 90%;
+		
+	}
+</style>
+<script>
+	import { gsap } from 'gsap'
+	import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+	gsap.registerPlugin(ScrollTrigger)
+
+	let youtube = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.sectionFooter',
+				// markers: true,
+				scrub: 1,
+				pin: true,
+				end: 'bottom top',
+				pinSpacing: false,
+			},
+		})
+
+
+</script>

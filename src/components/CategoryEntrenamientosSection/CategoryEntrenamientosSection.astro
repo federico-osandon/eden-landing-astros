@@ -1,14 +1,71 @@
 ---
+import SectionTitle from "../Section-Title/Section-Title.astro"
+import CategoryButton from "./CategoryButton.astro"
 
+const entrenamientos = [
+	{id: 1, name: 'Presenciales', description: 'Entrenamientos presenciales en el local Eden Terrassa'},
+	{id: 2, name: 'Adán', description: 'Entrenamientos para niños y niñas de 6 a 12 años'},
+	{id: 3, name: 'Maestros de niños', description: 'Entrenamientos para maestros de niños de 6 a 12 años'},
+	{id: 4, name: 'Eecursos de Formación Infantil', description: 'Recursos de formación para maestros de niños de 6 a 12 años'},
+	{id: 5, name: 'Equipos de alabanzas', description: 'Entrenamientos para equipos de alabanzas'},
+	{id: 6, name: 'Finanzas', description: 'Entrenamientos para el área de finanzas'},
+	{id: 7, name: 'Adolecentes', description: 'Entrenamientos para adolecentes de 13 a 17 años'},
+	{id: 8, name: 'Liderazgo', description: 'Entrenamientos para líderes'},
+]
 ---
 
 <section class="sectionEntrenamientos">
-  <header class="content-title">
-    <h6 class="entrenamientos-tile">
-      <strong> Entrenamientos </strong>
-    </h6>
-  </header>
-  <div class="div"></div>
+	<SectionTitle>
+		Entrenamientos
+	</SectionTitle>
+	<div class="div">
+		<CategoryButton>
+			Entrenamiento
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en el gym
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en el parque
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la playa
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la montaña
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la ciudad
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la piscina
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la cancha
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la pista
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la cancha
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la pista
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la cancha
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la pista
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la cancha
+		</CategoryButton>
+		<CategoryButton>
+			Entrenamiento en la pista
+		</CategoryButton>
+		
+	</div>
 </section>
 
 <style>
@@ -16,55 +73,47 @@
 		width: 100%;
 		height: 100vh;
 
-		padding: 150px 25px 20px 25px;
+		padding: 100px 25px 20px 25px;
 
-		background-color: #ddd;
+		background-color: #f7f7f7;
 
 		position: relative;
-		/* display: flex;
-			flex-wrap: wrap;
-			flex-direction: row; */
 
-		/* justify-content: center;
-			align-items: center; */
 	}
 
-	.content-title {
-		width: 100%;
-		height: 50px;
-		/* padding-bottom: 20px; */
 
-		/* display: flex;
-			justify-content: center;
-			align-items: center; */
-	}
-
-	.entrenamientos-tile {
-		width: 100%;
-		height: 100%;
-		text-align: left;
-
-		
-
-		color: #333;
-		font-size: 1.3rem;
-		text-transform: uppercase;
-		line-height: 1px;
-	}
-
-	.entrenamientos-tile::after {
-		content: "";
-		width: 240px;
-		height: 3px;
-		margin: 9px 3px;
-		display: inline-block;
-		background-color: #78866b;
-	}
 
 	.div {
 		width: 100%;
 		height: 90%;
-		border: 4px solid #78866b;
-		border-radius: 10px;
+
+		padding: 0 5%; 
+		/* border: 4px solid #78866b;
+		border-radius: 10px; */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
 	}
 </style>
+
+
+<script>
+	import { gsap } from 'gsap'
+	import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+	gsap.registerPlugin(ScrollTrigger)
+
+	let categories = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.sectionEntrenamientos',
+				// markers: true,
+				scrub: 10,
+				pin: true,
+				end: 'bottom top',
+				pinSpacing: false,
+			}
+		})
+
+
+</script>
