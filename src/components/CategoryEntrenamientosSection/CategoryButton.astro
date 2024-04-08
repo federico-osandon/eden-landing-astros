@@ -1,7 +1,8 @@
 ---
+const { href = '#' } = Astro.props
 ---
 <div class="content-button">
-    <a href="">
+    <a href={href}>
         <slot />
     </a>
 
@@ -9,11 +10,13 @@
 
 <style>
     .content-button {
+        /* width: 20%; */
         display: flex;
         justify-content: center;
         align-items: center;
     }
     a {
+        /* width: 100%; */
         color: #333;
         text-decoration: none;
 

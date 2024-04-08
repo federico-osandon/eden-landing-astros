@@ -18,53 +18,12 @@ const entrenamientos = [
 	<SectionTitle>
 		Entrenamientos
 	</SectionTitle>
-	<div class="div">
-		<CategoryButton>
-			Entrenamiento
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en el gym
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en el parque
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la playa
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la montaña
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la ciudad
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la piscina
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la cancha
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la pista
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la cancha
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la pista
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la cancha
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la pista
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la cancha
-		</CategoryButton>
-		<CategoryButton>
-			Entrenamiento en la pista
-		</CategoryButton>
-		
+	<div class="entrenamientos-category-content">
+		{ entrenamientos.map(entrenamiento => (
+			<CategoryButton>
+				{entrenamiento.name}
+			</CategoryButton>
+		))}		
 	</div>
 </section>
 
@@ -83,16 +42,17 @@ const entrenamientos = [
 
 
 
-	.div {
+	.entrenamientos-category-content {
 		width: 100%;
 		height: 90%;
 
-		padding: 0 5%; 
+		/* padding: 0 5%;  */
 		/* border: 4px solid #78866b;
 		border-radius: 10px; */
+
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: start;
 		align-items: center;
 	}
 </style>
