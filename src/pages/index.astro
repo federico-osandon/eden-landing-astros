@@ -9,15 +9,15 @@ import YoutubeSection from '../components/YoutubeSection/YoutubeSection.astro'
 import Footer from '../components/Footer/Footer.astro'
 ---
 <Layout title="Welcome to Astro.">	
+	<Navbar />
 	<main>
-		<Navbar />
 		<Hero />
 		<CategoryEntrenamientoSection />
 		<EventosSection />
 		<SpotifySection />
 		<YoutubeSection />
-		<Footer />
 	</main>
+	<Footer />
 </Layout>
 
 <style>

@@ -3,36 +3,29 @@ import SectionTitle from "../Section-Title/Section-Title.astro"
 import SpotifyCard from "./SpotifyCard.astro"
 ---
 
-<section class="sectionSpotify">
+<section class="spotify-section">
 	<SectionTitle>
 		Spotify
 	</SectionTitle>
-	<div class="div">
-		<div class="spotify-content1">	
-			<!-- <img class="spotify-image" src="/spotify/arbol-vida.png" alt="Arbol de Vida" loading="lazy">		 -->
-			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kmP5g7PidiDHhz6odoB3Y?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+	<div class="spotify-content-card">
+		<div class="spotify-card">	
+			<img class="spotify-image" src="/spotify/arbol-vida.png" alt="Arbol de Vida" loading="lazy">		
+			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kmP5g7PidiDHhz6odoB3Y?utm_source=generator" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
 		</div>
-		<div class="spotify-content1">	
-			<!-- <img class="spotify-image" src="/spotify/arbol-vida.png" alt="Arbol de Vida" loading="lazy">		 -->
-			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kmP5g7PidiDHhz6odoB3Y?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-		</div>
-		<div class="spotify-content1">	
-			<!-- <img class="spotify-image" src="/spotify/arbol-vida.png" alt="Arbol de Vida" loading="lazy">		 -->
-			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kmP5g7PidiDHhz6odoB3Y?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-		</div>
-		<div class="spotify-content">
+		
+		<div class="spotify-card">
 			<img class="spotify-image" src="/spotify/en-cristo.png" alt="En Cristo" loading="lazy">		
-			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/55FSTjY46bTfYfClmd2sq7?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/55FSTjY46bTfYfClmd2sq7?utm_source=generator" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
 		</div>
-		<div class="spotify-content">
+		<div class="spotify-card">
 			<img class="spotify-image" src="/public/spotify/posicionados.png" alt="Posicionados" loading="lazy">		
-			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5j6u0vBPECt8pDSAIFemSR?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+			<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5j6u0vBPECt8pDSAIFemSR?utm_source=generator" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
 		</div>
 	</div>
 </section>
 
 <style>
-	.sectionSpotify {
+	.spotify-section {
 		width: 100%;
 		min-height: 100vh;
 
@@ -50,7 +43,7 @@ import SpotifyCard from "./SpotifyCard.astro"
 
 	
 
-	.div {
+	.spotify-content-card {
 		width: 100%;
 		height: 90%;
 
@@ -61,18 +54,22 @@ import SpotifyCard from "./SpotifyCard.astro"
 	}
 
 
-	.spotify-content1 {
-        background-image: url('/spotify/arbol-vida.png');
+	.spotify-card{
+        /* background-image: url('/spotify/arbol-vida.png');
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
 		margin: 15px auto;
 		width: 30%;
 		height: 352px;
        
 
     }
-	.spotify-content {
+	.spotify-card{
         
         margin: 15px auto;
 
@@ -83,8 +80,8 @@ import SpotifyCard from "./SpotifyCard.astro"
     }
 
 	.spotify-image {
-		width: 100%;
-		height: 100%;
+		width: 352px;
+		height: 352px;
 		object-fit: cover;
 		border-radius: 12px;
 
@@ -93,24 +90,24 @@ import SpotifyCard from "./SpotifyCard.astro"
 
 	/* el media entre 600 y 768 */
 
-	@media screen and (min-width: 651px) and (max-width: 800px){
-		.spotify-content1 {
+	@media screen and (min-width: 813px) and (max-width: 1219px){
+		/* .spotify-content1 {
 			background-image: url('/spotify/arbol-vida-gr.png');
             width: 100%;
-        }
-        .spotify-content {
-			width: 100%;
+        } */
+        .spotify-card{
+			width: 50%;
         }
     }
-	@media (max-width: 650px) {
-		.spotify-content1 {
+	@media (max-width: 812px) {
+		/* .spotify-content1 {
 			background-image: url('/spotify/arbol-vida.png');
 			width: 100%;
 			margin: 15px auto;
-		}
-		.spotify-content {
+		} */
+		.spotify-card{
 			width: 100%;
-			margin: 15px auto;
+			/* margin: 15px auto; */
 		}
 	}
 </style>

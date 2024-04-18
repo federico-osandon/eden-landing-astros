@@ -1,11 +1,13 @@
 ---
+import MenuHamb from './menu-hamb.svg'
 ---
 <nav>
     <div class="brand-content">
           <a class="brand" href="/" aria-current="page">EDEN</a>
     </div>
-    <div class="menu-hamb">
+    <div class="menu-hamb-content">
           <img class="menu-hamb" src="/menu-hamb.svg" alt="menu" />
+		  <!-- <MenuHamb class="menu-hamb" /> -->
     </div>
 </nav>
 
@@ -37,17 +39,20 @@
 		border: solid 1px #aaa; */
 		text-align: center;
 		text-decoration: none;
-		color: #555;
+		color: #333;|
 	}
 
 	.brand[aria-current='page'] {
-		color: #333;
+		color: #f7f7f7;
 		
 		/* background-color: #d4d4d4; */
 	}
 
-	.menu-hamb {
+	.menu-hamb-content {
 		cursor: pointer;
+	}
+	.menu-hamb {
+		fill: #f7f7f7;
 	}
 </style>
 	
