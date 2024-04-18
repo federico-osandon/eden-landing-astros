@@ -8,15 +8,18 @@ import YoutubeCard from "./YoutubeCard.astro"
 		Youtube
 	</SectionTitle>
 	<div class="div">
-		<YoutubeCard>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/L9fUND3J0ro?si=57ahdH_ew6kT5oGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-		</YoutubeCard>
-		<YoutubeCard>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/agnqJMbDY6E?si=euIPys0ntGksnrzu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-		</YoutubeCard>
-		<YoutubeCard>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/Iu_meZtFpFQ?si=YytWLWXZ42gI2jip" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-		</YoutubeCard>
+		<div class="youtube-content">
+			<img class="youtube-image" src="/youtube/posicionados.png" alt="posicionado" loading="lazy">
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/L9fUND3J0ro?si=57ahdH_ew6kT5oGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe> -->
+		</div>
+		<div class="youtube-content">
+			<img class="youtube-image" src="/youtube/arbol-vida.png" alt="arbol vida" loading="lazy">
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/agnqJMbDY6E?si=euIPys0ntGksnrzu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe> -->
+		</div>
+		<div class="youtube-content">
+			<img class="youtube-image" src="/youtube/reflejo.png" alt="Reflejo" loading="lazy">
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Iu_meZtFpFQ?si=YytWLWXZ42gI2jip" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe> -->
+		</div>
 
 	</div>
 </section>
@@ -46,23 +49,91 @@ import YoutubeCard from "./YoutubeCard.astro"
 		align-items: center;
 		
 	}
+
+
+	.youtube-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+        margin: 15px auto;
+
+        width: 45%;
+        height: 45%;
+        /* max-width: 600px; */
+
+    }
+
+   
+    @media (max-width: 768px) {
+        .youtube-content {
+            width: 100%;
+        }
+    }
+
+	.youtube-image {
+        width: 100%;
+        height: 100%;
+
+		cursor: pointer;
+
+		border-radius: 20px;
+		transition: opacity 2s ease; 
+    }
+	
+	.fade-out {
+		opacity: 0; /* Hacer que la imagen sea completamente transparente */
+	}
+
 </style>
-<!-- <script>
-	import { gsap } from 'gsap'
-	import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-	gsap.registerPlugin(ScrollTrigger)
-
-	let youtube = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.sectionYoutube',
-				// markers: true,
-				scrub: 1,
-				pin: true,
-				end: 'bottom top',
-				pinSpacing: false,
+<script>
+	
+		const videos = [
+			{
+				title: 'Posicionados',
+				src: 'https://www.youtube.com/embed/L9fUND3J0ro?si=57ahdH_ew6kT5oGs',
+				alt: 'posicionado'
 			},
+			{
+				title: 'Árbol de la vida',
+				src: 'https://www.youtube.com/embed/agnqJMbDY6E?si=euIPys0ntGksnrzu',
+				alt: 'arbol vida'
+			},
+			{
+				title: 'Reflejo',
+				src: 'https://www.youtube.com/embed/Iu_meZtFpFQ?si=YytWLWXZ42gI2jip',
+				alt: 'Reflejo'
+			}
+		]
+
+		const youtubeImages = document.querySelectorAll('.youtube-image')
+		// const youtubeContent = document.querySelectorAll('.youtube-content')
+
+		youtubeImages.forEach(image => {
+			if (image instanceof HTMLImageElement) {
+
+				image.addEventListener('click', function() {
+					const videoIndex = Array.from(youtubeImages).indexOf(image)
+					const video = videos[videoIndex]
+					const iframe = document.createElement('iframe')
+					iframe.width = '560'
+					iframe.height = '315'
+					iframe.src = `${video.src}&autoplay=1`
+					//   iframe.frameborder = '0';
+					iframe.allowFullscreen = true
+					// iframe.loading = 'lazy'
+
+					// Agregar transición de opacidad a la imagen
+					image.classList.add('fade-out')
+					
+					setTimeout(() => {
+						image.parentNode.replaceChild(iframe, image)
+						// image.classList.remove('fade-out')
+					}, 1000)
+					
+				})
+			}
 		})
-
-
-</script> -->
+	
+</script>
