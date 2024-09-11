@@ -40,4 +40,15 @@ const { title } = Astro.props;
 		/* background-color: #ddd; */
 		color: #f7f7f7f7;
 	}
+
+	.hr_custom {
+		top: 0;
+		height: 3px; /* Equivalente a h-[2px] en Tailwind */
+		width: 90%; /* Equivalente a w-full en Tailwind */
+		min-width: 18rem; /* Equivalente a min-w-[18rem] en Tailwind */
+		border-top: 0; /* Equivalente a border-t-0 en Tailwind */
+		background: transparent; /* Equivalente a bg-transparent en Tailwind */
+		background-image: linear-gradient(to right, transparent, #78866b, transparent); /* Equivalente a bg-gradient-to-r from-transparent via-white to-transparent en Tailwind */
+		background-position: center;
+	}
 </style>

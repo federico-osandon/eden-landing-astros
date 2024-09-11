@@ -1,17 +1,31 @@
 ---
 import MenuHamb from "./MenuHamb.astro"	
 ---
-<nav>
-    <div class="brand-content">
-          <a class="brand" href="/" aria-current="page">EDEN</a>
-    </div>
-    <div class="menu-hamb-content">
-          <!-- <img class="menu-hamb" src="/menu-hamb.svg" alt="menu" /> -->
-		  <MenuHamb />
-    </div>
-</nav>
+<header>
+	<nav>
+		<div class="brand-content">
+			  <a class="brand" href="/" aria-current="page">EDEN</a>
+		</div>
+		<div class="menu-hamb-content">
+			  <!-- <img class="menu-hamb" src="/menu-hamb.svg" alt="menu" /> -->
+			  <MenuHamb />
+		</div>
+	</nav>
+	
+</header>
+
 
 <style>
+
+	header {
+		;
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center;
+		align-items: center; */
+		width: 100%;
+		height: 100%;
+	}
     nav {
 		position: fixed;
 		width: 100%;
