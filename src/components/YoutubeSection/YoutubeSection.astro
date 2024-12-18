@@ -57,22 +57,12 @@ import YoutubeCard from "./YoutubeCard.astro"
 
     }
 
-	@media screen and (min-width: 1191px) and (max-width: 1600px){
-		.youtube-card {
-			width: 50%;
-		}
-	}
-
-
-    @media (max-width: 1190px) {
-        .youtube-card {
-            width: 100%;
-        }
-    }
+	
 
 	.youtube-image {
         width: 560px;
         height: 315px;
+		object-fit: contain;
 
 		cursor: pointer;
 
@@ -86,6 +76,25 @@ import YoutubeCard from "./YoutubeCard.astro"
 		transition: opacity 1s ease;
 
 	}
+
+	@media (max-width: 767px) {
+		.youtube-image {
+			width: 95%;			
+		}
+	}
+
+	@media (min-width: 1191px) and (max-width: 1600px){
+		.youtube-card {
+			width: 50%;
+		}
+	}
+
+
+    @media (max-width: 1190px) {
+        .youtube-card {
+            width: 100%;
+        }
+    }
 
 </style>
 <script>

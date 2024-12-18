@@ -3,9 +3,9 @@
 ---
 
 <header class="content-title">
-    <h6 class="entrenamientos-tile">
+    <h2 class="entrenamientos-tile">
         <slot />
-    </h6>
+    </h2>
 </header>
 
 <style>
@@ -44,6 +44,13 @@
 
 		display: inline-block;
 		background-color: #78866b;
+	}
+
+	@media (max-width: 768px) {
+		.entrenamientos-tile {
+			width: 0;
+			font-size: 1.2rem;
+		}
 	}
 
 </style>
