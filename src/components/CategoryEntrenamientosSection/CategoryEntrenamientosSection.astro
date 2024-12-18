@@ -3,14 +3,14 @@ import SectionTitle from "../Section-Title/Section-Title.astro"
 import CategoryButton from "./CategoryButton.astro"
 
 const entrenamientos = [
-	{id: 1, name: 'Presenciales', description: 'Entrenamientos presenciales en el local Eden Terrassa'},
+	{id: 1, name: 'Entrenamientos Presenciales', description: 'Entrenamientos presenciales en el local Eden Terrassa'},
 	{id: 2, name: 'Adán', description: 'Entrenamientos para niños y niñas de 6 a 12 años'},
-	{id: 3, name: 'Maestros de niños', description: 'Entrenamientos para maestros de niños de 6 a 12 años'},
-	{id: 4, name: 'Eecursos de Formación Infantil', description: 'Recursos de formación para maestros de niños de 6 a 12 años'},
-	{id: 5, name: 'Equipos de alabanzas', description: 'Entrenamientos para equipos de alabanzas'},
-	{id: 6, name: 'Finanzas', description: 'Entrenamientos para el área de finanzas'},
-	{id: 7, name: 'Adolecentes', description: 'Entrenamientos para adolecentes de 13 a 17 años'},
-	{id: 8, name: 'Liderazgo', description: 'Entrenamientos para líderes'},
+	{id: 3, name: 'Entrenamientos Maestros de niños', description: 'Entrenamientos para maestros de niños de 6 a 12 años'},
+	{id: 4, name: 'Recursos de Formación Infantil', description: 'Recursos de formación para maestros de niños de 6 a 12 años'},
+	{id: 5, name: 'Entrenamientos Equipos de alabanzas', description: 'Entrenamientos para equipos de alabanzas'},
+	{id: 6, name: 'Entrenamientos Finanzas', description: 'Entrenamientos para el área de finanzas'},
+	{id: 7, name: 'Entrenamientos Adolecentes', description: 'Entrenamientos para adolecentes de 13 a 17 años'},
+	{id: 8, name: 'Entrenamientos Liderazgo', description: 'Entrenamientos para líderes'},
 ]
 ---
 
@@ -59,21 +59,21 @@ const entrenamientos = [
 
 
 <script>
-	// import { gsap } from 'gsap'
-	// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+	 import { gsap } from 'gsap'
+	 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-	// gsap.registerPlugin(ScrollTrigger)
+	 gsap.registerPlugin(ScrollTrigger)
 
-	// let categories = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: '.sectionEntrenamientos',
-	// 			// markers: true,
-	// 			scrub: 10,
-	// 			pin: true,
-	// 			end: 'bottom top',
-	// 			pinSpacing: false,
-	// 		}
-	// 	})
+	 let categories = gsap.timeline({
+	 		scrollTrigger: {
+	 			trigger: '.sectionEntrenamientos',
+	 			// markers: true,
+	 			scrub: 10,
+	 			pin: true,
+	 			end: 'bottom top',
+	 			pinSpacing: false,
+	 		}
+	 	})
 
 
 </script>

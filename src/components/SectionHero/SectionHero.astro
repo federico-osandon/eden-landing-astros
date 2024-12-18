@@ -10,6 +10,7 @@
 	</div>
 	<div class="section__logo2">
 		<img class="logo2" src="/logo-verde.svg" alt="loggo a mano"  />
+		<h1 class="title-hero">Entrenamientos Edén</h1>
 	</div>	
     <div class="entrenamientos-bottom">
         <h2 class="titulo-end">ENTRENAMIENTOS</h2>
@@ -37,9 +38,9 @@
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		background-image: url(/images/pizzarra.webp);
+		/* background-image: url(/images/pizzarra.webp);
 		background-size: cover;
-		background-position: center;
+		background-position: center; */
 
 		/* background: linear-gradient(to right, #111, #111, #111,#222, #222, #333, #333, #333, #333, #222, #222, #111, #111, #111); */
 		/* border: 20px solid #A8998E; */
@@ -55,7 +56,7 @@
 		font-size: 10rem;
 
 		text-transform: uppercase;
-		opacity: 0.09;
+		opacity: 0.05;
 
 		top: -70px;
 		/* left: -100px; */
@@ -76,7 +77,7 @@
 		font-size: 10rem;
 		/* line-height: ; */
 		text-transform: uppercase;
-		opacity: 0.09;
+		opacity: 0.05;
 
 		/* left: -100px; */
 		bottom: 150px;
@@ -96,6 +97,12 @@
 		font-size: 5rem; */
 	}
 
+	.title-hero {
+		font-size: 5rem;
+		text-transform: uppercase;
+		margin-top: -100px;
+	}
+
 	@media (max-width: 768px) {
 		.logo {
 			width: 70%;
@@ -113,6 +120,7 @@
 	.section__logo2 {
 		position: absolute;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
