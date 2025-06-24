@@ -5,9 +5,14 @@
     <div class="entrenamientos-top">
         <h1 class="titulo-sup">ENTRENAMIENTOS</h1>
     </div>
-    <div class="logo">
-        <img src="/eden-logo.svg" alt="Logo-eden" />
-	</div>
+    <div class="logo-container">
+        <div class="hexagon-wrapper">
+            <div class="hexagon"></div>
+        </div>
+        <div class="logo">
+            <img src="/eden-logo.svg" alt="Logo-eden" />
+        </div>
+    </div>
 	<div class="section__logo2">
 		<!-- <img class="logo2" src="/logo-verde.svg" alt="loggo a mano"  /> -->
 		<h1 class="title-hero">Entrenamientos Edén</h1>
@@ -91,10 +96,55 @@
 		line-height: 1;  
 	}
 
+	.logo-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.hexagon-wrapper {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.hexagon {
+		position: relative;
+		width: 16vw;
+		height: 18vw;
+		max-width: 400px;
+		max-height: 400px;
+		background-color: #B4CD02; /* Verde Eden */
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		opacity: 0.7;
+		transform: rotate(0deg);
+		animation: pulse 3s infinite ease-in-out;
+		box-shadow: 0 0 20px rgba(180, 205, 2, 0.5);
+	}
+	
+	@keyframes pulse {
+		0% {
+			transform: scale(1);
+			opacity: 0.7;
+		}
+		50% {
+			transform: scale(1.05);
+			opacity: 0.8;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 0.7;
+		}
+	}
+
 	.logo {
+		position: relative;
+		z-index: 2;
 		width: 30%;
-		/* text-align: center;
-		font-size: 5rem; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.title-hero {
@@ -109,6 +159,11 @@
 		.title-hero {
 			font-size: 4rem;
 			margin-top: 400px;
+		}
+		
+		.hexagon {
+			width: 16vw;
+			height: 18vw;
 		}
 	}
 
@@ -130,6 +185,13 @@
 			margin-top: 350px;
 			padding: 0 15px;
 		}
+		
+		.hexagon {
+			width: 40vw;
+			height: 46vw;
+			max-width: 280px;
+			max-height: 280px;
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -138,6 +200,13 @@
 			margin-top: 300px;
 			padding: 0 10px;
 			line-height: 1.2;
+		}
+		
+		.hexagon {
+			width: 38vw;
+			height: 42vw;
+			max-width: 220px;
+			max-height: 220px;
 		}
 	}
 
