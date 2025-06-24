@@ -9,7 +9,7 @@
         <img src="/eden-logo.svg" alt="Logo-eden" />
 	</div>
 	<div class="section__logo2">
-		<img class="logo2" src="/logo-verde.svg" alt="loggo a mano"  />
+		<!-- <img class="logo2" src="/logo-verde.svg" alt="loggo a mano"  /> -->
 		<h1 class="title-hero">Entrenamientos Edén</h1>
 	</div>	
     <div class="entrenamientos-bottom">
@@ -100,8 +100,16 @@
 	.title-hero {
 		font-size: 5rem;
 		text-transform: uppercase;
-		margin-top: -100px;
+		margin-top: 350px;
 		text-wrap: pretty;
+		text-align: center;
+	}
+
+	@media (max-width: 1024px) {
+		.title-hero {
+			font-size: 4rem;
+			margin-top: 400px;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -119,8 +127,17 @@
 
 		.title-hero {
 			font-size: 3rem;
-			margin-top: -50px;
-			text-align: center;
+			margin-top: 350px;
+			padding: 0 15px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.title-hero {
+			font-size: 2.5rem;
+			margin-top: 300px;
+			padding: 0 10px;
+			line-height: 1.2;
 		}
 	}
 
@@ -136,6 +153,7 @@
 	}
 	.section__logo2 img {
 		width: 45%;
+		opacity: 0; /* Imagen completamente transparente */
 	}
 	@media (max-width: 768px) {
 		.section__logo2 img {
@@ -183,7 +201,7 @@ path:nth-child(5) {
 	gsap.registerPlugin(ScrollTrigger);
 
 	// Deshabilitar el scroll al inicio
-	document.body.style.overflow = 'hidden';
+	// document.body.style.overflow = 'hidden';
 
 	// document.addEventListener('DOMContentLoaded', () => {
 		
@@ -191,11 +209,11 @@ path:nth-child(5) {
 		// 	opacity: 0.15,
 		// 	duration: 3,
 		// })
-		let animacionLogo = gsap.from('.logo', {
-			// opacity: 0.15,
-			y: -800,
-			duration: 3
-		})
+		// let animacionLogo = gsap.from('.logo', {
+		// 	// opacity: 0.15,
+		// 	y: -800,
+		// 	duration: 3
+		// })
 
 		let animacioneLogo2 =  gsap.from('.entrenamientos-top', {
 			opacity: 1,
@@ -221,15 +239,15 @@ path:nth-child(5) {
 			}
 		})
 
-		header.to('.logo', {
-			scale: 0.5,
-		})
+		// header.to('.logo', {
+		// 	scale: 0.5,
+		// })
 
 
 		// Habilitar el scroll una vez que todas las animaciones hayan terminado
-		Promise.all([animacionLogo]).then(() => {
-			document.body.style.overflow = 'auto';
-		});
+		// Promise.all([animacionLogo]).then(() => {
+		// 	document.body.style.overflow = 'auto';
+		// });
 	
 	// })
 </script> 
