@@ -62,12 +62,14 @@ import YoutubeCard from "./YoutubeCard.astro"
 	.youtube-image {
         width: 560px;
         height: 315px;
-		object-fit: contain;
-
+		object-fit: cover; /* Cambiado a cover para mejor ajuste */
+        max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
 		cursor: pointer;
 
 		/* border-radius: 20px; */
-		transition: opacity 3s ease; 
+		transition: opacity 3s ease;
+        border: 3px solid #B4CD02; /* Línea verde alrededor de la imagen */
+        box-sizing: border-box; /* Incluye el borde en el cálculo del tamaño */
     }
 
 	
@@ -79,7 +81,16 @@ import YoutubeCard from "./YoutubeCard.astro"
 
 	@media (max-width: 767px) {
 		.youtube-image {
-			width: 95%;			
+			width: 95%;
+            height: auto; /* Altura automática para mantener la proporción */
+            aspect-ratio: 16/9; /* Mantiene la proporción 16:9 */
+		}
+	}
+
+	@media (max-width: 480px) {
+		.youtube-image {
+			width: 100%;
+            border-width: 2px; /* Borde más delgado en móviles pequeños */
 		}
 	}
 

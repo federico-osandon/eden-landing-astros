@@ -30,9 +30,9 @@ const entrenamientos = [
 <style>
 	.sectionEntrenamientos {
 		width: 100%;
-		height: 100vh;
+		min-height: 100vh; /* Cambiado de height fijo a min-height */
 
-		padding: 100px 25px 20px 25px;
+		padding: 100px 25px 50px 25px; /* Aumentado el padding inferior */
 
 		/* color: #f7f7f7; */
 		background-color: #333;
@@ -44,22 +44,40 @@ const entrenamientos = [
 
 	.entrenamientos-category-content {
 		width: 100%;
-		height: 90%;
+		min-height: 70%; /* Cambiado de height fijo a min-height */
 
-		/* padding: 0 5%;  */
+		padding: 20px 0; /* Añadido padding vertical */
 		/* border: 4px solid #78866b;
 		border-radius: 10px; */
 
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: start;
-		align-items: center;
+		justify-content: center; /* Cambiado a center para mejor distribución */
+		align-items: flex-start; /* Cambiado a flex-start para mejor alineación vertical */
+		gap: 15px; /* Añadido gap para espaciado uniforme */
 	}
+	@media (max-width: 1024px) {
+		.entrenamientos-category-content {
+			padding: 15px 0;
+			gap: 12px;
+		}
+	}
+
 	@media (max-width: 768px) {
+		.sectionEntrenamientos {
+			padding: 80px 15px 40px 15px; /* Reducido el padding en móviles */
+		}
+
 		.entrenamientos-category-content {
 			justify-content: center;
 			flex-direction: column;
-			
+			gap: 10px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.sectionEntrenamientos {
+			padding: 60px 10px 30px 10px; /* Aún más reducido para móviles pequeños */
 		}
 	}
 </style>

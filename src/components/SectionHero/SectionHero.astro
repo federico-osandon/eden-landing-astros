@@ -75,17 +75,75 @@ import GradientCircles from '../GradientCircles/GradientCircles.astro';
 		line-height: 1;  
 	}
 
+	.logo-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.hexagon-wrapper {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.hexagon {
+		position: relative;
+		width: 16vw;
+		height: 18vw;
+		max-width: 400px;
+		max-height: 400px;
+		background-color: #B4CD02; /* Verde Eden */
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		opacity: 0.7;
+		transform: rotate(0deg);
+		animation: pulse 3s infinite ease-in-out;
+		box-shadow: 0 0 20px rgba(180, 205, 2, 0.5);
+	}
+	
+	@keyframes pulse {
+		0% {
+			transform: scale(1);
+			opacity: 0.7;
+		}
+		50% {
+			transform: scale(1.05);
+			opacity: 0.8;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 0.7;
+		}
+	}
+
 	.logo {
+		position: relative;
+		z-index: 2;
 		width: 30%;
-		/* text-align: center;
-		font-size: 5rem; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.title-hero {
 		font-size: 5rem;
 		text-transform: uppercase;
-		margin-top: -100px;
+		margin-top: 350px;
 		text-wrap: pretty;
+		text-align: center;
+	}
+
+	@media (max-width: 1024px) {
+		.title-hero {
+			font-size: 4rem;
+			margin-top: 400px;
+		}
+		
+		.hexagon {
+			width: 16vw;
+			height: 18vw;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -103,8 +161,31 @@ import GradientCircles from '../GradientCircles/GradientCircles.astro';
 
 		.title-hero {
 			font-size: 3rem;
-			margin-top: -50px;
-			text-align: center;
+			margin-top: 350px;
+			padding: 0 15px;
+		}
+		
+		.hexagon {
+			width: 40vw;
+			height: 46vw;
+			max-width: 280px;
+			max-height: 280px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.title-hero {
+			font-size: 2.5rem;
+			margin-top: 300px;
+			padding: 0 10px;
+			line-height: 1.2;
+		}
+		
+		.hexagon {
+			width: 38vw;
+			height: 42vw;
+			max-width: 220px;
+			max-height: 220px;
 		}
 	}
 	/* Se eliminaron las animaciones del SVG verde */
@@ -118,7 +199,7 @@ import GradientCircles from '../GradientCircles/GradientCircles.astro';
 	gsap.registerPlugin(ScrollTrigger);
 
 	// Deshabilitar el scroll al inicio
-	document.body.style.overflow = 'hidden';
+	// document.body.style.overflow = 'hidden';
 
 	// document.addEventListener('DOMContentLoaded', () => {
 		
@@ -126,11 +207,11 @@ import GradientCircles from '../GradientCircles/GradientCircles.astro';
 		// 	opacity: 0.15,
 		// 	duration: 3,
 		// })
-		let animacionLogo = gsap.from('.logo', {
-			// opacity: 0.15,
-			y: -800,
-			duration: 3
-		})
+		// let animacionLogo = gsap.from('.logo', {
+		// 	// opacity: 0.15,
+		// 	y: -800,
+		// 	duration: 3
+		// })
 
 		let animacioneLogo2 =  gsap.from('.entrenamientos-top', {
 			opacity: 1,
@@ -156,9 +237,9 @@ import GradientCircles from '../GradientCircles/GradientCircles.astro';
 			}
 		})
 
-		header.to('.logo', {
-			scale: 0.5,
-		})
+		// header.to('.logo', {
+		// 	scale: 0.5,
+		// })
 
 
 		// Habilitar el scroll una vez que todas las animaciones hayan terminado
